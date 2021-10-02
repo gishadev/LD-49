@@ -6,7 +6,9 @@ namespace Gisha.LD49
     [RequireComponent(typeof(Rigidbody2D))]
     public class TaxiController : MonoBehaviour
     {
-        [SerializeField] private float _maxSpeed = 20f;
+        [Header("Car settings")] [SerializeField]
+        private float _maxSpeed = 20f;
+
         [SerializeField] private float _accelerationFactor = 30f;
         [SerializeField] private float _turnFactor = 3.5f;
         [SerializeField] private float _driftFactor = 0.95f;

@@ -8439,10 +8439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1a26e765c331d4498dd280bb8d72f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 20
-  _accelerationFactor: 15
+  _maxSpeed: 10
+  _accelerationFactor: 11
   _turnFactor: 3.5
   _driftFactor: 0.95
+  _passiveDrag: 3
 --- !u!50 &1864325338
 Rigidbody2D:
   serializedVersion: 4
