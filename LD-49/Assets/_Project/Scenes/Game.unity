@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &276359161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276359163}
+  - component: {fileID: 276359162}
+  m_Layer: 0
+  m_Name: Passenger Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &276359162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276359161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76c8720930b44af9c0ffa3c97f705c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passengerPrefab: {fileID: 3808776623216731631, guid: b13bed977bcc67d428b747f39711cb4f, type: 3}
+--- !u!4 &276359163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276359161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.058759, y: -1.7844483, z: -1.2848405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323710560
 GameObject:
   m_ObjectHideFlags: 0
@@ -124692,6 +124736,18 @@ PrefabInstance:
     - target: {fileID: 8662722916701034452, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _maxSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _turnFactor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _accelerationFactor
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8662722916701034455, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_RootOrder
