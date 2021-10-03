@@ -12,6 +12,10 @@ namespace Gisha.LD49.Core
         [SerializeField] private float accelerationFactor = 8f;
         [SerializeField] private float turnFactor = 4f;
         [SerializeField] private float driftFactor = 0.3f;
+        
+        [SerializeField] private float passiveDrag = 3f;
+        [SerializeField] private float passiveDragSpeed = 3f;
+        
         public int ConvertedSpeed => Mathf.Abs(Mathf.RoundToInt(_velocityVsUp / maxSpeed * 120));
 
         private Vector3 _maxBound, _minBound;
@@ -74,7 +78,7 @@ namespace Gisha.LD49.Core
 
             // Apply drag, when there is no input.
             if (_accelerationInput == 0)
-                _rb.drag = Mathf.Lerp(_rb.drag, 3f, Time.fixedDeltaTime * 3f);
+                _rb.drag = Mathf.Lerp(_rb.drag, passiveDrag, Time.fixedDeltaTime * passiveDragSpeed);
             else _rb.drag = 0;
 
             Vector2 engineForce = transform.up * _accelerationInput * accelerationFactor;
