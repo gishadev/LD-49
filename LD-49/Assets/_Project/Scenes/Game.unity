@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taxiController: {fileID: 638167410}
-  minCalmSpeed: 100
+  minSafeSpeed: 80
   explodeDelayInSeconds: 3.5
 --- !u!4 &122878593
 Transform:
@@ -16071,6 +16071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedometerTMPText: {fileID: 710020097}
+  safeColor: {r: 1, g: 1, b: 1, a: 0.8509804}
+  dangerColor: {r: 1, g: 0, b: 0, a: 0.8509804}
 --- !u!1001 &1834716266
 PrefabInstance:
   m_ObjectHideFlags: 0
