@@ -6,12 +6,12 @@ namespace Gisha.LD49.Core
     public class TaxiController : MonoBehaviour
     {
         [Header("Car settings")] [SerializeField]
-        private float _maxSpeed = 20f;
+        private float maxSpeed = 20f;
 
-        [SerializeField] private float _accelerationFactor = 30f;
-        [SerializeField] private float _turnFactor = 3.5f;
-        [SerializeField] private float _driftFactor = 0.95f;
-        public int Speed => Mathf.Abs(Mathf.RoundToInt(_velocityVsUp / _maxSpeed * 120));
+        [SerializeField] private float accelerationFactor = 8f;
+        [SerializeField] private float turnFactor = 4f;
+        [SerializeField] private float driftFactor = 0.3f;
+        public int ConvertedSpeed => Mathf.Abs(Mathf.RoundToInt(_velocityVsUp / maxSpeed * 120));
 
         private Vector3 _maxBound, _minBound;
         private float _halfWidth, _halfHeight;
@@ -58,14 +58,14 @@ namespace Gisha.LD49.Core
             _velocityVsUp = Vector2.Dot(transform.up, _rb.velocity);
 
             // Limit speed.
-            if (_velocityVsUp > _maxSpeed && _accelerationInput > 0)
+            if (_velocityVsUp > maxSpeed && _accelerationInput > 0)
                 return;
 
-            if (_velocityVsUp < -_maxSpeed * 0.5f && _accelerationInput < 0)
+            if (_velocityVsUp < -maxSpeed * 0.5f && _accelerationInput < 0)
                 return;
 
             // Limit so we cannot go faster in any direction while accelerating.
-            if (_rb.velocity.sqrMagnitude > _maxSpeed * _maxSpeed && _accelerationInput > 0)
+            if (_rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && _accelerationInput > 0)
                 return;
 
             // Apply drag, when there is no input.
@@ -73,7 +73,7 @@ namespace Gisha.LD49.Core
                 _rb.drag = Mathf.Lerp(_rb.drag, 3f, Time.fixedDeltaTime * 3f);
             else _rb.drag = 0;
 
-            Vector2 engineForce = transform.up * _accelerationInput * _accelerationFactor;
+            Vector2 engineForce = transform.up * _accelerationInput * accelerationFactor;
             _rb.AddForce(engineForce, ForceMode2D.Force);
         }
 
@@ -83,7 +83,7 @@ namespace Gisha.LD49.Core
             float minSpeedBeforeAllowTurningFactor = _rb.velocity.magnitude / 8f;
             minSpeedBeforeAllowTurningFactor = Mathf.Clamp01(minSpeedBeforeAllowTurningFactor);
 
-            _rotationAngle -= _steeringInput * _turnFactor * minSpeedBeforeAllowTurningFactor;
+            _rotationAngle -= _steeringInput * turnFactor * minSpeedBeforeAllowTurningFactor;
             _rb.MoveRotation(_rotationAngle);
         }
 
@@ -92,7 +92,7 @@ namespace Gisha.LD49.Core
             Vector2 forwardVel = transform.up * Vector2.Dot(_rb.velocity, transform.up);
             Vector2 rightVel = transform.right * Vector2.Dot(_rb.velocity, transform.right);
 
-            _rb.velocity = forwardVel + rightVel * _driftFactor;
+            _rb.velocity = forwardVel + rightVel * driftFactor;
         }
 
         private void MoveIntoBounds()
