@@ -1,4 +1,3 @@
-using System.Collections;
 using Gisha.Effects.VFX;
 using UnityEngine;
 

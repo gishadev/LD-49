@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5131853141533555551}
   - component: {fileID: 5131853141533555550}
   m_Layer: 0
-  m_Name: Spot
+  m_Name: Passenger Spot
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -75,6 +75,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5131853141533555551}
+  - {fileID: 6460642276587859763}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -197,3 +198,33 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 445aefb420aaf2e47950ffa62256aed6, type: 3}
   - {fileID: 21300000, guid: e67b5d4a6445a454cb3ddd741c61b5cb, type: 3}
   - {fileID: 21300000, guid: 840b39cbb8b28d64883f87b79f5308ea, type: 3}
+--- !u!1 &8554121112600414573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6460642276587859763}
+  m_Layer: 0
+  m_Name: Vehicle Spot
+  m_TagString: VehicleSpot
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6460642276587859763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554121112600414573}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.32, y: 3.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5131853143036829201}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}

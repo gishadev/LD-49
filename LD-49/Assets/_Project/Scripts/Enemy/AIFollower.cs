@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Gisha.LD49.Core
+namespace Gisha.LD49.Enemy
 {
     public class AIFollower : MonoBehaviour
     {
@@ -33,15 +32,9 @@ namespace Gisha.LD49.Core
                 StartCoroutine(FollowingCoroutine());
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.collider.CompareTag("Player") && !_isFollowing)
-                StartCoroutine(FollowingCoroutine());
-        }
-
         private bool CheckForPlayerInFront()
         {
-            var hits = Physics2D.CircleCastAll(transform.position, raycastRadius, transform.up * raycastDistance);
+            var hits = Physics2D.CircleCastAll(transform.position, raycastRadius, transform.up, raycastDistance);
 
             if (hits.Length > 0)
                 foreach (var hitInfo in hits)
@@ -52,7 +45,6 @@ namespace Gisha.LD49.Core
 
         private IEnumerator FollowingCoroutine()
         {
-            Debug.Log("HEYA!");
             _isFollowing = true;
             while (_target != null || _isFollowing)
             {
@@ -70,6 +62,12 @@ namespace Gisha.LD49.Core
         {
             float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             return Quaternion.Euler(0, 0, rotZ - 90);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.collider.CompareTag("Player") && !_isFollowing)
+                StartCoroutine(FollowingCoroutine());
         }
 
         private void OnDrawGizmos()

@@ -1,4 +1,3 @@
-using System;
 using Gisha.LD49.Core;
 using TMPro;
 using UnityEngine;
