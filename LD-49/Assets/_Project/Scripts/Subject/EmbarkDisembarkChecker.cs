@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Subject
 {
     public class EmbarkDisembarkChecker : MonoBehaviour
     {

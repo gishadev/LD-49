@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Core
 {
     public class CameraFollowController : MonoBehaviour
     {

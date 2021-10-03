@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Subject
 {
     public class EmbarkationManager : MonoBehaviour
     {

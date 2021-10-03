@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Subject
 {
     public class Passenger : MonoBehaviour
     {

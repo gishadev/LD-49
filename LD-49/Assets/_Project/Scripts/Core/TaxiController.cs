@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Core
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class TaxiController : MonoBehaviour

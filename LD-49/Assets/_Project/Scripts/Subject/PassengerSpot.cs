@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gisha.LD49
+namespace Gisha.LD49.Subject
 {
     public class PassengerSpot : MonoBehaviour
     {
