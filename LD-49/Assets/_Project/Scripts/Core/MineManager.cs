@@ -1,4 +1,5 @@
 using System.Collections;
+using Gisha.Effects.VFX;
 using UnityEngine;
 
 namespace Gisha.LD49.Core
@@ -14,6 +15,7 @@ namespace Gisha.LD49.Core
 
         private float TaxiSpeed => taxiController.ConvertedSpeed;
 
+        private bool _isExploded = false;
         private float _delay;
 
         private void Awake()
@@ -24,6 +26,9 @@ namespace Gisha.LD49.Core
 
         private void Update()
         {
+            if (_isExploded)
+                return;
+
             if (!IsSafe)
             {
                 _delay -= Time.deltaTime;
@@ -37,7 +42,11 @@ namespace Gisha.LD49.Core
 
         private void Explode()
         {
+            VFXManager.Instance.Emit("Explosion", taxiController.transform.position);
+            taxiController.gameObject.SetActive(false);
             Debug.Log("<color=red>KABOOM!</color>");
+            GameManager.ReloadScene();
+            _isExploded = true;
         }
     }
 }
