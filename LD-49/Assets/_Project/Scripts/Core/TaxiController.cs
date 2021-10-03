@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Gisha.LD49.Core
@@ -12,6 +11,7 @@ namespace Gisha.LD49.Core
         [SerializeField] private float _accelerationFactor = 30f;
         [SerializeField] private float _turnFactor = 3.5f;
         [SerializeField] private float _driftFactor = 0.95f;
+        public int Speed => Mathf.Abs(Mathf.RoundToInt(_velocityVsUp / _maxSpeed * 120));
 
         private Vector3 _maxBound, _minBound;
         private float _halfWidth, _halfHeight;
