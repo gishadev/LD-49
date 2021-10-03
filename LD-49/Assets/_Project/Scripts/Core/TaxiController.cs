@@ -13,16 +13,26 @@ namespace Gisha.LD49.Core
         [SerializeField] private float _turnFactor = 3.5f;
         [SerializeField] private float _driftFactor = 0.95f;
 
+        private Vector3 _maxBound, _minBound;
+        private float _halfWidth, _halfHeight;
+
         private float _velocityVsUp;
         private float _accelerationInput;
         private float _steeringInput;
         private float _rotationAngle;
 
         private Rigidbody2D _rb;
+        private BoxCollider2D _collider;
 
         private void Awake()
         {
+            _collider = GetComponent<BoxCollider2D>();
             _rb = GetComponent<Rigidbody2D>();
+
+            _maxBound = WorldBounds.GetMaxBound();
+            _minBound = WorldBounds.GetMinBound();
+            _halfWidth = _collider.size.x / 2;
+            _halfHeight = _collider.size.y / 2;
         }
 
         private void Update()
@@ -34,10 +44,12 @@ namespace Gisha.LD49.Core
         private void FixedUpdate()
         {
             ApplyEngineForce();
-            
+
             RemoveSideForces();
-            
+
             ApplySteering();
+
+            MoveIntoBounds();
         }
 
         private void ApplyEngineForce()
@@ -81,6 +93,25 @@ namespace Gisha.LD49.Core
             Vector2 rightVel = transform.right * Vector2.Dot(_rb.velocity, transform.right);
 
             _rb.velocity = forwardVel + rightVel * _driftFactor;
+        }
+
+        private void MoveIntoBounds()
+        {
+            var position = transform.position;
+
+            float xPos = position.x;
+            float yPos = position.y;
+
+            if (position.x + _halfWidth > _maxBound.x)
+                xPos = _maxBound.x - _halfWidth;
+            if (position.x - _halfWidth < _minBound.x)
+                xPos = _minBound.x + _halfWidth;
+            if (position.y + _halfHeight > _maxBound.y)
+                yPos = _maxBound.y - _halfHeight;
+            if (position.y - _halfHeight < _minBound.y)
+                yPos = _minBound.y + _halfHeight;
+
+            _rb.position = new Vector2(xPos, yPos);
         }
     }
 }
