@@ -125451,6 +125451,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _maxSpeed
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _driftFactor
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: _accelerationFactor
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8662722916701034455, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_RootOrder
       value: 2
