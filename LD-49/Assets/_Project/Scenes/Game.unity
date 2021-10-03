@@ -18379,6 +18379,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8662722916701034456, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8662722916701034457, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_Name
       value: Taxi

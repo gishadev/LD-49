@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8197504880040323819}
   - component: {fileID: 8197504880040323818}
+  - component: {fileID: 3874274295438855488}
+  - component: {fileID: 6299733600152487797}
   m_Layer: 0
   m_Name: lightRod1
   m_TagString: Untagged
@@ -83,6 +85,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3874274295438855488
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197504880040323828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &6299733600152487797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197504880040323828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8c3b18d8e55704da78940126addbae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenSprite: {fileID: 21300000, guid: 0100b1ab6d65b9147b76a0220e8865bc, type: 3}
+  fallOffset: 0.85
 --- !u!1 &8197504880053372130
 GameObject:
   m_ObjectHideFlags: 0
