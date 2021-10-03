@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3808776623216731629}
   - component: {fileID: 3808776623216731628}
   - component: {fileID: 3808776623216731626}
+  - component: {fileID: 4566203680201553892}
   m_Layer: 0
   m_Name: Passenger
   m_TagString: Passenger
@@ -99,3 +100,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4566203680201553892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808776623216731631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9af58e4a95e4d97a12a1b517fef9159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
