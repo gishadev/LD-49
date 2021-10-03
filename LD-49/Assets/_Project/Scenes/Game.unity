@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 276359163}
   - component: {fileID: 276359162}
   m_Layer: 0
-  m_Name: Passenger Spawner
+  m_Name: Embarkation Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passengerPrefab: {fileID: 3808776623216731631, guid: b13bed977bcc67d428b747f39711cb4f, type: 3}
+  disembarkSpotPrefab: {fileID: 3808776623216731631, guid: 9ba85a594c60acc498450472ad94b585, type: 3}
 --- !u!4 &276359163
 Transform:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276359161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.058759, y: -1.7844483, z: -1.2848405}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
