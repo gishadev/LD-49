@@ -34,7 +34,9 @@ namespace Gisha.LD49.Core
         private void FixedUpdate()
         {
             ApplyEngineForce();
+            
             RemoveSideForces();
+            
             ApplySteering();
         }
 

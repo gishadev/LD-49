@@ -15,7 +15,7 @@ namespace Gisha.LD49.Core
             Instance = this;
         }
 
-        public static Transform GetMaxBound() => Instance.max;
-        public static Transform GetMinBound() => Instance.min;
+        public static Vector2 GetMaxBound() => Instance.max.position;
+        public static Vector2 GetMinBound() => Instance.min.position;
     }
 }
