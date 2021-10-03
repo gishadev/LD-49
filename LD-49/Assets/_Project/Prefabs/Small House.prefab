@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 7705389364911583924}
   - component: {fileID: 7705389364911583923}
   - component: {fileID: 7705389364911583925}
+  - component: {fileID: 4978015734240202826}
   m_Layer: 0
   m_Name: Small House
   m_TagString: Untagged
@@ -153,3 +154,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.2}
   m_EdgeRadius: 0
+--- !u!114 &4978015734240202826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705389364911583922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ac9be9d0c5ee47a916da8a439570e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 14523c5ef5e84c54eb56774f77741bb4, type: 3}
+  - {fileID: 21300000, guid: 2462d88f96881e94c9c5d44588346623, type: 3}
+  - {fileID: 21300000, guid: 8a683b438f327644dafa73266f1175e9, type: 3}
