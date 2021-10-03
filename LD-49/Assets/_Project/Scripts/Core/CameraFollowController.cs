@@ -26,7 +26,7 @@ namespace Gisha.LD49.Core
             FollowTarget();
             MoveIntoBounds();
         }
-        
+
         private void FollowTarget()
         {
             var newPosition = new Vector3(_target.transform.position.x, _target.transform.position.y,

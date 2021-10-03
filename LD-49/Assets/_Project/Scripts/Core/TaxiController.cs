@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gisha.LD49.Core
@@ -28,7 +29,10 @@ namespace Gisha.LD49.Core
         {
             _collider = GetComponent<BoxCollider2D>();
             _rb = GetComponent<Rigidbody2D>();
+        }
 
+        private void Start()
+        {
             _maxBound = WorldBounds.GetMaxBound();
             _minBound = WorldBounds.GetMinBound();
             _halfWidth = _collider.size.x / 2;

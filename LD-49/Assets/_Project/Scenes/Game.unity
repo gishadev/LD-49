@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d650dda41d739f46985723906b96cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _followSpeed: 25
+  _followSpeed: 20
   _target: {fileID: 1864325336}
 --- !u!20 &519420031
 Camera:
@@ -1351,7 +1351,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.0020920634, y: 0.0020920634, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
