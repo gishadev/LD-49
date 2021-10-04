@@ -1,4 +1,6 @@
+using Gisha.Effects.Audio;
 using Gisha.Effects.VFX;
+using Gisha.LD49.Taxi;
 using UnityEngine;
 
 namespace Gisha.LD49.Core
@@ -30,22 +32,41 @@ namespace Gisha.LD49.Core
 
             if (!IsSafe)
             {
+                OneBeep();
                 _delay -= Time.deltaTime;
                 if (_delay < 0f)
                     Explode();
             }
 
             else
+            {
                 _delay = explodeDelayInSeconds;
+                _isOnceBeeped = false;
+            }
         }
 
         private void Explode()
         {
-            VFXManager.Instance.Emit("Explosion", taxiController.transform.position);
-            taxiController.gameObject.SetActive(false);
             Debug.Log("<color=red>KABOOM!</color>");
+            
+            VFXManager.Instance.Emit("Explosion", taxiController.transform.position);
+            AudioManager.Instance.PlaySFX("explosion");
+            
+            taxiController.gameObject.SetActive(false);
             GameManager.ReloadScene();
+            
             _isExploded = true;
+        }
+
+        private bool _isOnceBeeped = false;
+
+        private void OneBeep()
+        {
+            if (!_isOnceBeeped)
+            {
+                AudioManager.Instance.PlaySFX("beep");
+                _isOnceBeeped = true;
+            }
         }
     }
 }

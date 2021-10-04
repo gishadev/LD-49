@@ -1,4 +1,5 @@
 using System;
+using Gisha.Effects.Audio;
 using UnityEngine;
 
 namespace Gisha.LD49.Delivery
@@ -13,16 +14,18 @@ namespace Gisha.LD49.Delivery
             if (other.CompareTag("Passenger"))
             {
                 Debug.Log("<color=yellow>You've picked a passenger!</color>");
+                AudioManager.Instance.PlaySFX("pickPassenger");
+                
                 Destroy(other.gameObject);
-
                 PassengerEmbarked?.Invoke();
             }
 
             else if (other.CompareTag("Destination"))
             {
                 Debug.Log("<color=yellow>You've disembarked a passenger!</color>");
+                AudioManager.Instance.PlaySFX("pickPassenger");
+                
                 Destroy(other.gameObject);
-
                 PassengerDisembarked?.Invoke();
             }
         }

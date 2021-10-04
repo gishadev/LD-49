@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Gisha.LD49.Core;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using Random = UnityEngine.Random;
 
 namespace Gisha.LD49.Delivery

@@ -1,4 +1,3 @@
-using Gisha.LD49.Prop;
 using UnityEngine;
 
 namespace Gisha.LD49.Prop

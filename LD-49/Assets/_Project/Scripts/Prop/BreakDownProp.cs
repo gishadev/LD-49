@@ -1,3 +1,4 @@
+using Gisha.Effects.Audio;
 using Gisha.LD49.Core;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Gisha.LD49.Prop
         public virtual void BreakDown()
         {
             ScoreManager.AddScore(20);
+            AudioManager.Instance.PlaySFX("destroyObject");
             _sr.sprite = brokenSprite;
             _sr.sortingOrder = 0;
             Destroy(this);
