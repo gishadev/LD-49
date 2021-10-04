@@ -26,7 +26,7 @@ namespace Gisha.LD49.Core
         private void AddScoreForCount(int count)
         {
             _scoreCount += count;
-            scoreTMPText.text = _scoreCount.ToString();
+            scoreTMPText.text = _scoreCount.ToString("D9");
         }
     }
 }
