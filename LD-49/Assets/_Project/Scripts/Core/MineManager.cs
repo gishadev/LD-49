@@ -12,8 +12,10 @@ namespace Gisha.LD49.Core
         [SerializeField] private TaxiController taxiController;
         [SerializeField] private float minSafeSpeed;
         [SerializeField] private float explodeDelayInSeconds;
+        
         public static bool IsSafe => Instance.TaxiSpeed > Instance.minSafeSpeed;
-
+        public static float TimeLeft => Instance._delay;
+        
         private float TaxiSpeed => taxiController.ConvertedSpeed;
 
         private bool _isExploded = false;
