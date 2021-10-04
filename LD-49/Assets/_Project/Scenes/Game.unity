@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taxiController: {fileID: 638167410}
   minSafeSpeed: 70
-  explodeDelayInSeconds: 4
+  explodeDelayInSeconds: 3.5
 --- !u!4 &122878593
 Transform:
   m_ObjectHideFlags: 0
