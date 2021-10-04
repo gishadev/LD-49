@@ -9,6 +9,8 @@ namespace Gisha.LD49.Core
 
         [SerializeField] private TMP_Text scoreTMPText;
 
+        public static int Score => Instance._scoreCount;
+        
         private int _scoreCount;
 
         private void Awake()
