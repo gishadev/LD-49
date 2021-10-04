@@ -9,8 +9,10 @@ namespace Gisha.LD49.GUI
     {
         [SerializeField] private TMP_Text speedometerTMPText;
         [SerializeField] private TMP_Text timeLeftTMPText;
-        [SerializeField] private Color safeColor;
+        [Space] [SerializeField] private Color safeColor;
         [SerializeField] private Color dangerColor;
+        [Space] [SerializeField] private Animator bombAnimator;
+
 
         private TaxiController _controller;
 
@@ -24,11 +26,14 @@ namespace Gisha.LD49.GUI
             speedometerTMPText.text = _controller.ConvertedSpeed.ToString();
 
             bool isSafe = MineManager.IsSafe;
+            bombAnimator.SetBool("IsStable", isSafe);
             if (!isSafe)
+            {
                 ShowTimer();
+            }
             else
                 timeLeftTMPText.text = string.Empty;
-                
+
             ApplyColor(isSafe);
         }
 
@@ -44,6 +49,5 @@ namespace Gisha.LD49.GUI
         {
             timeLeftTMPText.text = MineManager.TimeLeft.ToString("F1");
         }
-        
     }
 }
