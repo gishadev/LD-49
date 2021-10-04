@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Passenger
-  - Disembark
   - VehicleSpot
   - Vehicle
+  - Destination
   layers:
   - Default
   - TransparentFX

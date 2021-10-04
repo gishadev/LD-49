@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3808776623216731628}
   - component: {fileID: 3808776623216731626}
   m_Layer: 0
-  m_Name: Disembark Spot
-  m_TagString: Disembark
+  m_Name: Destination Spot
+  m_TagString: Destination
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

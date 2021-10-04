@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gisha.LD49.Subject
+namespace Gisha.LD49.Delivery
 {
     public class PassengerSpot : MonoBehaviour
     {

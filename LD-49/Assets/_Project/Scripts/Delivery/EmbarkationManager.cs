@@ -1,13 +1,17 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gisha.LD49.Subject
+namespace Gisha.LD49.Delivery
 {
     public class EmbarkationManager : MonoBehaviour
     {
         [SerializeField] private GameObject passengerPrefab;
-        [SerializeField] private GameObject disembarkSpotPrefab;
+        [SerializeField] private GameObject destinationSpotPrefab;
+
+        // Using for arrow object, which shows next passenger/destination spot.
+        public static Action<Transform> SpawnedPointOfInterest;
 
         public Passenger CPassenger { get; private set; }
 
@@ -37,7 +41,7 @@ namespace Gisha.LD49.Subject
 
         private void OnPassengerEmbarked()
         {
-            SpawnDisembarkSpot();
+            SpawnDestinationSpot();
         }
 
         private void OnPassengerDisembarked()
@@ -47,27 +51,30 @@ namespace Gisha.LD49.Subject
 
         private void SpawnPassengerAtRandomSpot()
         {
-            GeneratePassengerSpots(out PassengerSpot embarkSpot, out PassengerSpot disembarkSpot);
+            GeneratePassengerSpots(out PassengerSpot embarkSpot, out PassengerSpot destinationSpot);
 
             var passenger = Instantiate(passengerPrefab, embarkSpot.Position, Quaternion.identity)
                 .GetComponent<Passenger>();
-            passenger.SetDisembarkSpot(disembarkSpot);
+            passenger.SetDisembarkSpot(destinationSpot);
 
             CPassenger = passenger;
+
+            SpawnedPointOfInterest?.Invoke(passenger.transform);
         }
 
-        private void SpawnDisembarkSpot()
+        private void SpawnDestinationSpot()
         {
-            Instantiate(disembarkSpotPrefab, CPassenger.DisembarkSpot.Position, Quaternion.identity);
+            var spot = Instantiate(destinationSpotPrefab, CPassenger.DestinationSpot.Position, Quaternion.identity);
+            SpawnedPointOfInterest?.Invoke(spot.transform);
         }
 
-        private void GeneratePassengerSpots(out PassengerSpot embarkSpot, out PassengerSpot disembarkSpot)
+        private void GeneratePassengerSpots(out PassengerSpot embarkSpot, out PassengerSpot destinationSpot)
         {
             var spots = _passengerSpots.ToList();
 
             embarkSpot = _passengerSpots[Random.Range(0, spots.Count)];
             spots.Remove(embarkSpot);
-            disembarkSpot = _passengerSpots[Random.Range(0, spots.Count)];
+            destinationSpot = _passengerSpots[Random.Range(0, spots.Count)];
         }
     }
 }

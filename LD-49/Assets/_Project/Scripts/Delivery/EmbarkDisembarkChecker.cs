@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Gisha.LD49.Subject
+namespace Gisha.LD49.Delivery
 {
     public class EmbarkDisembarkChecker : MonoBehaviour
     {
@@ -18,7 +18,7 @@ namespace Gisha.LD49.Subject
                 PassengerEmbarked?.Invoke();
             }
 
-            else if (other.CompareTag("Disembark"))
+            else if (other.CompareTag("Destination"))
             {
                 Debug.Log("<color=yellow>You've disembarked a passenger!</color>");
                 Destroy(other.gameObject);

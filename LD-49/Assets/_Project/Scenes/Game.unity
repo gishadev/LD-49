@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taxiController: {fileID: 638167410}
-  minSafeSpeed: 80
-  explodeDelayInSeconds: 3.5
+  minSafeSpeed: 75
+  explodeDelayInSeconds: 4
 --- !u!4 &122878593
 Transform:
   m_ObjectHideFlags: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passengerPrefab: {fileID: 3808776623216731631, guid: b13bed977bcc67d428b747f39711cb4f, type: 3}
-  disembarkSpotPrefab: {fileID: 3808776623216731631, guid: 9ba85a594c60acc498450472ad94b585, type: 3}
+  destinationSpotPrefab: {fileID: 3808776623216731631, guid: 9ba85a594c60acc498450472ad94b585, type: 3}
 --- !u!4 &276359163
 Transform:
   m_ObjectHideFlags: 0
@@ -18378,10 +18378,6 @@ PrefabInstance:
     - target: {fileID: 8662722916701034455, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8662722916701034456, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8662722916701034457, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_Name
