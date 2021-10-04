@@ -8,6 +8,8 @@ namespace Gisha.LD49.Core
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] private GameObject loseMenu;
+        
         [SerializeField] private float reloadDelay = 2f;
         private static GameManager Instance { get; set; }
 
@@ -21,20 +23,9 @@ namespace Gisha.LD49.Core
             AudioManager.Instance.PlaySFX("engine1Start");
         }
 
-        public static void ReloadScene()
+        public static void CallLoseMenu()
         {
-            Instance.ReloadSceneWithDelay();
-        }
-
-        private void ReloadSceneWithDelay()
-        {
-            StartCoroutine(ReloadSceneCoroutine());
-        }
-        
-        private IEnumerator ReloadSceneCoroutine()
-        {
-            yield return new WaitForSeconds(reloadDelay);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Instance.loseMenu.SetActive(true);
         }
     }
 }

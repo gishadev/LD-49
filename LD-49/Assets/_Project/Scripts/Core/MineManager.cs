@@ -55,7 +55,7 @@ namespace Gisha.LD49.Core
             AudioManager.Instance.PlaySFX("explosion");
             
             taxiController.gameObject.SetActive(false);
-            GameManager.ReloadScene();
+            GameManager.CallLoseMenu();
             
             _isExploded = true;
         }
