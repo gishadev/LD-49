@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
+using Gisha.LD49.Core;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using Random = UnityEngine.Random;
 
 namespace Gisha.LD49.Delivery
@@ -42,11 +44,13 @@ namespace Gisha.LD49.Delivery
         private void OnPassengerEmbarked()
         {
             SpawnDestinationSpot();
+            ScoreManager.AddScore(50);
         }
 
         private void OnPassengerDisembarked()
         {
             SpawnPassengerAtRandomSpot();
+            ScoreManager.AddScore(100);
         }
 
         private void SpawnPassengerAtRandomSpot()

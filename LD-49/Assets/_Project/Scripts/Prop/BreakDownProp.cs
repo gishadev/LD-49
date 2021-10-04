@@ -1,3 +1,4 @@
+using Gisha.LD49.Core;
 using UnityEngine;
 
 namespace Gisha.LD49.Prop
@@ -15,6 +16,7 @@ namespace Gisha.LD49.Prop
 
         public virtual void BreakDown()
         {
+            ScoreManager.AddScore(20);
             _sr.sprite = brokenSprite;
             _sr.sortingOrder = 0;
             Destroy(this);

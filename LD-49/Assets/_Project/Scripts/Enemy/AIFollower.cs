@@ -57,21 +57,6 @@ namespace Gisha.LD49.Enemy
             return false;
         }
 
-        // private IEnumerator FollowingCoroutine()
-        // {
-        //     _isFollowing = true;
-        //     while (_target != null || _isFollowing)
-        //     {
-        //         Vector2 dir = (_target.position - transform.position).normalized;
-        //         Quaternion newRotation = GetRotationFromDirection(dir);
-        //         _rb.velocity = transform.up * speed * Time.deltaTime;
-        //         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
-        //         yield return null;
-        //     }
-        //
-        //     _isFollowing = false;
-        // }
-
         private Quaternion GetRotationFromDirection(Vector2 direction)
         {
             float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
