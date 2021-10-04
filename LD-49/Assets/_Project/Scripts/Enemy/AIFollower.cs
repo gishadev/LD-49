@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ namespace Gisha.LD49.Enemy
 
         [Header("Raycast")] [SerializeField] private float raycastRadius = 2f;
         [SerializeField] private float raycastDistance = 3f;
-
 
         private bool _isFollowing = false;
         private Transform _target;
@@ -29,7 +29,21 @@ namespace Gisha.LD49.Enemy
                 return;
 
             if (CheckForPlayerInFront())
-                StartCoroutine(FollowingCoroutine());
+                _isFollowing = true;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_isFollowing || _target == null)
+            {
+                _isFollowing = false;
+                return;
+            }
+
+            Vector2 dir = (_target.position - transform.position).normalized;
+            Quaternion newRotation = GetRotationFromDirection(dir);
+            _rb.velocity = transform.up * speed * Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
         }
 
         private bool CheckForPlayerInFront()
@@ -43,20 +57,20 @@ namespace Gisha.LD49.Enemy
             return false;
         }
 
-        private IEnumerator FollowingCoroutine()
-        {
-            _isFollowing = true;
-            while (_target != null || _isFollowing)
-            {
-                Vector2 dir = (_target.position - transform.position).normalized;
-                Quaternion newRotation = GetRotationFromDirection(dir);
-                _rb.velocity = transform.up * speed * Time.deltaTime;
-                transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
-                yield return null;
-            }
-
-            _isFollowing = false;
-        }
+        // private IEnumerator FollowingCoroutine()
+        // {
+        //     _isFollowing = true;
+        //     while (_target != null || _isFollowing)
+        //     {
+        //         Vector2 dir = (_target.position - transform.position).normalized;
+        //         Quaternion newRotation = GetRotationFromDirection(dir);
+        //         _rb.velocity = transform.up * speed * Time.deltaTime;
+        //         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
+        //         yield return null;
+        //     }
+        //
+        //     _isFollowing = false;
+        // }
 
         private Quaternion GetRotationFromDirection(Vector2 direction)
         {
@@ -67,7 +81,7 @@ namespace Gisha.LD49.Enemy
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.collider.CompareTag("Player") && !_isFollowing)
-                StartCoroutine(FollowingCoroutine());
+                _isFollowing = true;
         }
 
         private void OnDrawGizmos()

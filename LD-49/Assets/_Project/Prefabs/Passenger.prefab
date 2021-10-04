@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3808776623216731628}
   - component: {fileID: 3808776623216731626}
   - component: {fileID: 4566203680201553892}
+  - component: {fileID: 8107039853944069146}
   m_Layer: 0
   m_Name: Passenger
   m_TagString: Passenger
@@ -112,3 +113,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9af58e4a95e4d97a12a1b517fef9159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8107039853944069146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808776623216731631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ac9be9d0c5ee47a916da8a439570e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 0607cf01a165b1548a424a2972e78714, type: 3}
+  - {fileID: 21300000, guid: 5b7f69209f732d24c97b69de8bb74f70, type: 3}
+  - {fileID: 21300000, guid: 34d6517c71c0eba4fb4485fc68d62212, type: 3}
+  - {fileID: 21300000, guid: 58f71c5598b694040ba5ace94f622ae8, type: 3}
+  - {fileID: 21300000, guid: 3c99ef0652eae4a41a0ebe8de5eccd22, type: 3}
