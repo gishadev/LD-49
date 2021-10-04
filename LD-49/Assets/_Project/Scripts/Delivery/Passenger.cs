@@ -6,7 +6,7 @@ namespace Gisha.LD49.Delivery
     {
         public PassengerSpot DestinationSpot { get; private set; }
 
-        public void SetDisembarkSpot(PassengerSpot spot)
+        public void SetDestinationSpot(PassengerSpot spot)
         {
             DestinationSpot = spot;
         }

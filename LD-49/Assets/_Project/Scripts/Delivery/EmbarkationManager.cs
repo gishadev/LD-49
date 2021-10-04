@@ -55,7 +55,7 @@ namespace Gisha.LD49.Delivery
 
             var passenger = Instantiate(passengerPrefab, embarkSpot.Position, Quaternion.identity)
                 .GetComponent<Passenger>();
-            passenger.SetDisembarkSpot(destinationSpot);
+            passenger.SetDestinationSpot(destinationSpot);
 
             CPassenger = passenger;
 
