@@ -68,7 +68,7 @@ namespace Gisha.LD49.Core
             if (_velocityVsUp > maxSpeed && _accelerationInput > 0)
                 return;
 
-            if (_velocityVsUp < -maxSpeed * 0.5f && _accelerationInput < 0)
+            if (_velocityVsUp < -maxSpeed * 0.6f && _accelerationInput < 0)
                 return;
 
             // Limit so we cannot go faster in any direction while accelerating.

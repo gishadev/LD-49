@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taxiController: {fileID: 638167410}
-  minSafeSpeed: 75
+  minSafeSpeed: 70
   explodeDelayInSeconds: 4
 --- !u!4 &122878593
 Transform:
@@ -18335,6 +18335,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8662722916701034453, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2a213c4e9f3e4e34caf4ebae65b7faa3, type: 2}
+    - target: {fileID: 8662722916701034454, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
+      propertyPath: accelerationFactor
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8662722916701034455, guid: 830fb7907b1693544ab5ef7cf9a83039, type: 3}
       propertyPath: m_RootOrder
       value: 12
