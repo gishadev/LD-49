@@ -1,12 +1,13 @@
 using Gisha.Effects.Audio;
+using Gisha.Effects.VFX;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Gisha.LD49.Taxi
+namespace Gisha.LD49.Core
 {
-    public class TaxiCollisionDetection : MonoBehaviour
+    public class DynamicCollisionDetection : MonoBehaviour
     {
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter2D(Collision2D coll)
         {
             int rNum = Random.Range(0, 2);
             switch (rNum)
@@ -18,6 +19,8 @@ namespace Gisha.LD49.Taxi
                     AudioManager.Instance.PlaySFX("hit3");
                     break;
             }
+
+            VFXManager.Instance.Emit("Hit", coll.GetContact(0).point);
         }
     }
 }

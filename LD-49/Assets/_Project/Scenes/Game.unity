@@ -3578,6 +3578,8 @@ MonoBehaviour:
   effectsCollection:
   - name: Explosion
     prefab: {fileID: 5571556049517428448, guid: 9ef3102110bc51f479e96ac41f2cffe9, type: 3}
+  - name: Hit
+    prefab: {fileID: 817133215098139240, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
 --- !u!4 &1202548476
 Transform:
   m_ObjectHideFlags: 0
@@ -20588,6 +20590,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8197504880040323819, guid: c17008c87e472cd4dbfa9c4789faea1f, type: 3}
   m_PrefabInstance: {fileID: 2137187331}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &817133213784276253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139237, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817133215098139240, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
+      propertyPath: m_Name
+      value: Hit Effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: deefdc37a946b4044835d6b0898fbe14, type: 3}
 --- !u!1001 &2755761821271448070
 PrefabInstance:
   m_ObjectHideFlags: 0
