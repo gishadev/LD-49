@@ -1,15 +1,18 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gisha.LD49.Enemy
 {
     public class AIFollower : MonoBehaviour
     {
-        [Header("Movement")] [SerializeField] private float speed;
+        [Header("Movement")] [SerializeField] private float maxSpeed = 240;
+        [SerializeField] private float minSpeed = 100;
         [SerializeField] private float rotationSpeed;
 
         [Header("Raycast")] [SerializeField] private float raycastRadius = 2f;
         [SerializeField] private float raycastDistance = 3f;
 
+        private float _speed;
         private bool _isFollowing = false;
         private Transform _target;
 
@@ -19,6 +22,7 @@ namespace Gisha.LD49.Enemy
         {
             _rb = GetComponent<Rigidbody2D>();
             _target = GameObject.FindGameObjectWithTag("Player").transform;
+            _speed = Random.Range(minSpeed, maxSpeed);
         }
 
         private void Update()
@@ -40,7 +44,7 @@ namespace Gisha.LD49.Enemy
 
             Vector2 dir = (_target.position - transform.position).normalized;
             Quaternion newRotation = GetRotationFromDirection(dir);
-            _rb.velocity = transform.up * speed * Time.deltaTime;
+            _rb.velocity = transform.up * _speed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
         }
 
